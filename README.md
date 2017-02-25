@@ -14,14 +14,16 @@ I am **DUDDUKURI MAHESH** working as a FullStack Js Developer in INDIA and i am 
 authentication, and other essential facilities for building web and services applications. **hapi** enables
 developers to focus on writing reusable application logic in a highly modular and prescriptive approach. 
 
-Here we are configure the node.js with hapi.js and its most used plugins
-** hapi-swager**
-** console**
-** good-console**
-** inert**
-** joi**
-** vision**
-** boom**
+Here we are configure the node.js with hapi.js and its most used plugins...
+
+## plugins
+* hapi-swager
+* console
+* good-console
+* inert
+* joi
+* vision
+* boom
 
 If you are benefiting from **node-hapi.js** and would like to help keep the project financially sustainable, please visit
 Duddukuri Mahesh's [Patreon page](https://www.patreon.com/eranhammer) or contact him [via email](duddukurimahesh@gmail.com).
