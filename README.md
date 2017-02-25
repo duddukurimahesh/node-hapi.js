@@ -15,16 +15,16 @@ authentication, and other essential facilities for building web and services app
 developers to focus on writing reusable application logic in a highly modular and prescriptive approach. 
 
 Here we are configure the node.js with hapi.js and its most used plugins
-** hapi-swager
-** console
-** good-console
-** inert
-** joi
-** vision
-** boom
+** hapi-swager**
+** console**
+** good-console**
+** inert**
+** joi**
+** vision**
+** boom**
 
 If you are benefiting from **node-hapi.js** and would like to help keep the project financially sustainable, please visit
-Duddukuri Mahesh's [Patreon page](https://www.patreon.com/eranhammer) or contact him [via email](mailto:duddukurimahesh@gmail.com).
+Duddukuri Mahesh's [Patreon page](https://www.patreon.com/eranhammer) or contact him [via email](duddukurimahesh@gmail.com).
   
   For the latest updates, [change log](http://hapijs.com/updates), and release information visit [hapijs.com](http://hapijs.com) and follow [@hapijs](https://twitter.com/hapijs) on twitter. If you have questions, please open an issue in the
 [discussion forum](https://github.com/hapijs/discuss).
