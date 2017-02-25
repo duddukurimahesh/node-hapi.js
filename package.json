@@ -1,0 +1,26 @@
+{
+  "name": "corkscrew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bars",
+    "managers",
+    "owners",
+    "staff"
+  ],
+  "author": "igniva solutions",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "13.5.0",
+    "hapi-swagger": "6.2.0",
+    "inert": "4.0.1",
+    "joi": "9.0.4",
+    "mongodb": "2.2.19",
+    "mongoose": "4.5.7",
+    "vision": "4.1.0"
+  }
+}
