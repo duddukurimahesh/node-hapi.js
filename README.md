@@ -14,6 +14,11 @@ I am **DUDDUKURI MAHESH** working as a FullStack Js Developer in INDIA and i am 
 authentication, and other essential facilities for building web and services applications. **hapi** enables
 developers to focus on writing reusable application logic in a highly modular and prescriptive approach. 
 
+### *Watch* this intro/background to Hapi video:
+
+[![What is Hapi?](http://i.imgur.com/sZRoxdD.png)](https://youtu.be/BsyvnVOhp4U?t=3m50s "What is Hapi.js - Click to Watch!")
+
+
 Here we are configure the node.js with hapi.js and its most used plugins...
 
 ## plugins
