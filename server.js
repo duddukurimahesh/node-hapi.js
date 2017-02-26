@@ -54,7 +54,7 @@ server.route({
 // Start the server
 const options = {
     info: {
-        'title': 'CorkScrew API Documentation',
+        'title': 'My API Documentation',
         'version': '1.0.0'
     },
     pathPrefixSize: 2,
@@ -84,11 +84,11 @@ server.register([
 
 
 //Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1/corkscrew', function (err) {
+mongoose.connect('mongodb://127.0.0.1/myApp', function (err) {
     if (err) {
         console.log("DB Error: ", err);
         process.exit(1);
     } else {
-        console.log('MongoDB Connected', 'mongodb://127.0.0.1/corkscrew');
+        console.log('MongoDB Connected', 'mongodb://127.0.0.1/myApp');
     }
 });
