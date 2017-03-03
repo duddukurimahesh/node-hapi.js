@@ -12,12 +12,7 @@ I am **DUDDUKURI MAHESH** working as a FullStack Js Developer in INDIA and i am 
 
    **hapi** (**Web and services application framework**) is a simple to use configuration-centric framework with built-in support for input validation, caching,
 authentication, and other essential facilities for building web and services applications. **hapi** enables
-developers to focus on writing reusable application logic in a highly modular and prescriptive approach. 
-
-### *Watch* this intro/background to Hapi video:
-
-https://www.facebook.com/duddukuri.mahesh
-
+developers to focus on writing reusable application logic in a highly modular and prescriptive approach.
 
 Here we are configure the node.js with hapi.js and its most used plugins...
 
