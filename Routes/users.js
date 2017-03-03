@@ -13,7 +13,7 @@
 ---------------------------------------------*/
 const Joi         = require('joi');
 const Controllers = require('../Controllers');
-
+const Boom        = require('boom');
 
 module.exports = [
     {
@@ -46,14 +46,15 @@ module.exports = [
             tags: ['api','Users'],
             validate:{
                 payload:{
-                    phone: Joi.string().required()
+                    phone: Joi.number().required()
                     /* all parameters here... */
                 }
             }
         },
         handler: function (request, reply) {
             console.log("-----**-------Request to register new user.-----**-------");
-            reply(null,{phone_num:request.payload});
+            //reply(null,{phone_num:request.payload});
+            reply(Boom.unauthorized('invalid password'),null);
             /*Controllers.users.registerUser(request.payload, function (err, res) {
                 if(err) {
                     reply(err,null);

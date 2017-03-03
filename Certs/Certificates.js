@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------
 
-    * In this folder we are storing the certificates like APN, ...
+    * In this folder we are storing the certificates like APN, etc,...
 
 ---------------------------------------------------------------------*/

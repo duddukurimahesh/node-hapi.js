@@ -8,6 +8,7 @@
 
 'use strict';
 
-var users = require('./users');
+const users = require('./users');
+const test = require('./test');
 
-module.exports = [].concat(users);
+module.exports = [].concat(users,test);
