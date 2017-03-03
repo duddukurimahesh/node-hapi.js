@@ -16,7 +16,7 @@ developers to focus on writing reusable application logic in a highly modular an
 
 ### *Watch* this intro/background to Hapi video:
 
-[![What is Hapi?](http://i.imgur.com/sZRoxdD.png)](https://youtu.be/BsyvnVOhp4U?t=3m50s "What is Hapi.js - Click to Watch!")
+[![follow us on facebook](https://www.facebook.com/duddukuri.mahesh)]
 
 
 Here we are configure the node.js with hapi.js and its most used plugins...
