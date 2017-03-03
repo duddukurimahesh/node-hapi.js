@@ -1,20 +1,22 @@
 {
-  "name": "corkscrew",
+  "name": "Project_Name",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is project description.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "bars",
-    "managers",
-    "owners",
-    "staff"
+    "node",
+    "hapi"
   ],
-  "author": "igniva solutions",
+  "author": "Duddukiuri Mahesh",
   "license": "ISC",
   "dependencies": {
+    "boom": "^4.2.0",
+    "good": "^7.1.0",
+    "good-console": "^6.4.0",
+    "good-squeeze": "^5.0.1",
     "hapi": "13.5.0",
     "hapi-swagger": "6.2.0",
     "inert": "4.0.1",

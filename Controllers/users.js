@@ -11,8 +11,8 @@
     * Include internal and external modules.
 ---------------------------------------------*/
 
-var Utils =  require('../Utils');
-var Services = require('../Services');
+const Utils    =  require('../Utils');
+const Services = require('../Services');
 
 module.exports = {
 

@@ -9,8 +9,9 @@
 /*--------------------------------------------
     * Include internal and external modules.
 ---------------------------------------------*/
-var Models =  require('../Models');
-var Utils =  require('../Utils');
+const Boom   = require('boom');
+const Models =  require('../Models');
+const Utils  =  require('../Utils');
 
 module.exports = {
 
@@ -21,7 +22,7 @@ module.exports = {
 
         Models.users.User(obj).save(function (err, res) {
             if(err) {
-                callback(err, null);
+                reply(Boom.notFound('Title is missing.'));
             } else {
                 callback(null,res);
             };
@@ -31,7 +32,7 @@ module.exports = {
 
         Models.users.User.find({},{__v:0},{},function(err,res){
             if(err){
-                callback(err,null);
+                reply(Boom.notFound('Title is missing.'));
             } else{
                 callback(null,res);
             };

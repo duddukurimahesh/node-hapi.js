@@ -11,83 +11,56 @@
 /*--------------------------------------------
     * Include internal and external modules.
 ---------------------------------------------*/
-var Joi = require('joi');
-var Controllers = require('../Controllers');
+const Joi         = require('joi');
+const Controllers = require('../Controllers');
+
 
 module.exports = [
     {
         method: 'GET',
-        path:'/v1/Users',
+        path:'/v1/Users/allUsers',
         config: {
             description: 'Get users',
             notes: 'Get list of all users',
-            tags: ['api']
+            tags: ['api','Users']
         },
         handler: function (request, reply) {
+            console.log("-----**-------Request to get all users.-----**-------");
 
             Controllers.users.getAllUsers(request,function (err,res) {
                 if(err){
-                    reply({status: "error", message: "Error in fetching users. Please try again later" })
+                    reply(err,null);
                 } else {
-                    reply({status : "Success", message : "Fetched the users", data: res})
-                }
+                    reply(null,res);
+                };
             });
 
         }
     },
     {
         method: 'POST',
-        path:'/v1/Users',
+        path:'/v1/Users/register',
         config: {
             description: 'Add users',
-            notes: 'Add a new user to the system',
-            tags: ['api'],
+            notes: 'Add new user.',
+            tags: ['api','Users'],
             validate:{
                 payload:{
-                    auth: Joi.number().required(),
-                    name: Joi.string().required(),
-                    email: Joi.string().email().lowercase().required(),
-                    password: Joi.string().required(),
                     phone: Joi.string().required()
+                    /* all parameters here... */
                 }
             }
         },
         handler: function (request, reply) {
-
-            Controllers.users.registerUser(request.payload, function (err, res) {
+            console.log("-----**-------Request to register new user.-----**-------");
+            reply(null,{phone_num:request.payload});
+            /*Controllers.users.registerUser(request.payload, function (err, res) {
                 if(err) {
-                    reply({status: "error", message:"Error in registeration. Please try again later"})
+                    reply(err,null);
                 } else {
-                    reply({status: "success", message: "User added successfully ", data: res});
-                }
-            });
-
-        }
-    },
-    {
-        method: 'PUT',
-        path:'/v1/Users/{id}',
-        config: {
-            description: 'Update users',
-            notes: 'Update a user by id',
-            tags: ['api']
-        },
-        handler: function (request, reply) {
-
-
-        }
-    },
-    {
-        method: 'DELETE',
-        path:'/v1/Users/{id}',
-        config: {
-            description: 'Delete users',
-            notes: 'Delete a user by id',
-            tags: ['api']
-        },
-        handler: function (request, reply) {
-
-
+                    reply(null,res);
+                };
+            });*/
         }
     }
 
