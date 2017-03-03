@@ -3,7 +3,7 @@
 # <img src="https://raw.github.com/hapijs/hapi/master/images/hapi.png" />
 ### This is the Node-hapi Project setup platform.
 
-Lead Maintainer: [Duddukuri Mahessh](https://github.com/duddukurimahesh/node-hapi.js)
+Lead Maintainer: [Duddukuri Mahesh](https://github.com/duddukurimahesh/node-hapi.js)
 
 
 Development version: **1.0.0**
