@@ -16,16 +16,16 @@ module.exports = {
         debug        : true
     },
     test: {
-        name         : "Project_Name",
-        host         : "127.0.0.1",
-        port         : "9000",
+        name         : "",
+        host         : "",
+        port         : "",
         absolutePath : __dirname+"/..",
         debug        : true
     },
     live: {
-        name         : "Project_Name",
-        host         : "127.0.0.1",
-        port         : "9000",
+        name         : "",
+        host         : "",
+        port         : "",
         absolutePath : __dirname+"/..",
         debug        : true
     }

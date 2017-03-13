@@ -39,7 +39,7 @@ var UserSchema = new Schema({
         lat: { type: String },
         long: { type: String }
     },
-    emailModified_at: {type: Date}
+    emailModified_at: {type: Date, default : Date.now()}
 });
 
 var user = Mongoose.model('user', UserSchema);

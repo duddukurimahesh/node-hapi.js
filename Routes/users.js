@@ -18,21 +18,21 @@ const Boom        = require('boom');
 module.exports = [
     {
         method: 'GET',
-        path:'/v1/Users/allUsers',
+        path:'/v1/Users/usersList',
         config: {
             description: 'Get users',
             notes: 'Get list of all users',
             tags: ['api','Users']
         },
-        handler: function (request, reply) {
-            console.log("-----**-------Request to get all users.-----**-------");
+        handler: (request, reply) => {
 
-            Controllers.users.getAllUsers(request,function (err,res) {
-                if(err){
-                    reply(err,null);
-                } else {
-                    reply(null,res);
-                };
+            console.log("\x1b[34m\x1b[1m",'USERS');
+
+            Controllers.users.getAllUsers(request,(err,res) => {
+                if(err)
+                    reply(err,null)
+                else
+                    reply(null,res)
             });
 
         }
@@ -51,11 +51,13 @@ module.exports = [
                 }
             }
         },
-        handler: function (request, reply) {
-            console.log("-----**-------Request to register new user.-----**-------");
+        handler: (request, reply) => {
+
+            console.log("\x1b[34m\x1b[1m",'USERS');
+
             //reply(null,{phone_num:request.payload});
             reply(Boom.unauthorized('invalid password'),null);
-            /*Controllers.users.registerUser(request.payload, function (err, res) {
+            /*Controllers.users.registerUser(request.payload,(err, res) => {
                 if(err) {
                     reply(err,null);
                 } else {

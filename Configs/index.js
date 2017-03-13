@@ -10,10 +10,11 @@
 
 module.exports =  {
 
-    database  : require("./dbConstants"),
-    app       : require("./appConstants"),
-    mail      : require("./smtpConstants"),
-    constants : require("./constants")
+    db         : require("./dbConfig"),
+    app        : require("./appConfig"),
+    SMTP       : require("./smtpConfig"),
+    CONSTS     : require("./constants"),
+    PUSH       : require("./pushConfig")
 };
 
 

@@ -16,8 +16,8 @@ const Services = require('../Services');
 
 module.exports = {
 
-    registerUser: function (request, callback){
-        Services.users.register(request, function(err, res){
+    registerUser: (request, callback) => {
+        Services.users.register(request,(err, res)=>{
             if(err){
                 callback(err, null);
             }else{
@@ -26,8 +26,8 @@ module.exports = {
         });
     },
 
-    getAllUsers: function(request,callback){
-        Services.users.getAll(request,function(err,res){
+    getAllUsers: (request,callback) => {
+        Services.users.getAll(request,(err,res)=>{
             if(err){
                 callback(err,null);
             } else{

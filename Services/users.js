@@ -16,11 +16,11 @@ const Utils  =  require('../Utils');
 module.exports = {
 
     //Register a user.
-    register: function(params, callback){
+    register: (params, callback) => {
 
         var obj = {};
 
-        Models.users.User(obj).save(function (err, res) {
+        Models.users.User(obj).save((err, res)=>{
             if(err) {
                 reply(Boom.notFound('Title is missing.'));
             } else {
@@ -28,9 +28,9 @@ module.exports = {
             };
         });
     },
-    getAll: function(params, callback){
+    getAll: (params, callback) => {
 
-        Models.users.User.find({},{__v:0},{},function(err,res){
+        Models.users.User.find({},{__v:0},{},(err,res)=>{
             if(err){
                 reply(Boom.notFound('Title is missing.'));
             } else{

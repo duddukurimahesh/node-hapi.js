@@ -11,19 +11,19 @@
 /*--------------------------------------------
     * Include internal and external modules.
 ---------------------------------------------*/
-const FCM         = require('fcm').FCM;
-const Joi         = require('joi');
-const Boom        = require('boom');
+const FCM   = require('fcm').FCM;
+const Joi   = require('joi');
+const Boom  = require('boom');
 
 module.exports = [
 
-    /*-------------------------------------
+     /*-------------------------------------
         * test API for sent mails.
      --------------------------------------*/
     /*{
     },*/
 
-    /*-------------------------------------
+     /*-------------------------------------
         * test API for FCM-Notifications.
      --------------------------------------*/
     {
@@ -41,9 +41,9 @@ module.exports = [
                 }
             }
         },
-        handler: function (request, reply) {
+        handler: (request, reply) => {
 
-            console.log('+++++++++++++++++++++++++ test GCM request recieved +++++++++++++++++++++++++');
+            console.log('\x1b[36m\x1b[1m','+++++++++++++++++++++++++ test GCM request recieved +++++++++++++++++++++++++');
 
 
             let fcm = new FCM(request.payload.apikey);
@@ -53,7 +53,7 @@ module.exports = [
                 "data.message": request.payload.message
             };
 
-            fcm.send(message, function(err, res) {
+            fcm.send(message, (err, res) => {
                 if (err)
                     reply(err,null);
                 else
@@ -62,7 +62,7 @@ module.exports = [
         }
     },
 
-    /*-------------------------------------
+     /*-------------------------------------
         * test API for APN-notifications.
      --------------------------------------*/
     {
@@ -79,19 +79,21 @@ module.exports = [
                 }
             }
         },
-        handler: function (request, reply){
+        handler: (request, reply) => {
 
-            console.log('+++++++++++++++++++++++++ Test API request recieved +++++++++++++++++++++++++');
+            console.log('\x1b[36m\x1b[1m','+++++++++++++++++++++++++ Test API request recieved +++++++++++++++++++++++++');
 
-            var apn = require('apn');
-            var path = require('path');
-            var configs = require('../Configs');
-            var env = require('../env');
-            var app = (env.instance == "dev") ? configs.app.dev   :  configs.app.test;
+            let apn     = require('apn');
+            let path    = require('path');
+            let configs = require('../Configs');
+            const env   = require('../env');
+            const app   = configs.app[env.instance];
+            let cert    = path.join(app.absolutePath,'/certs/newfile.crt.pem');
+            let key     = path.join(app.absolutePath,'/certs/newfile.key.pem');
 
-            var connectionOptions = {           //node apn options
-                "cert"          :path.join(app.absolutePath,'/certs/newfile.crt.pem'),
-                "key"           : path.join(app.absolutePath,'/certs/newfile.key.pem'),
+            let connectionOptions = {           //node apn options
+                "cert"          : cert,
+                "key"           : key,
                 "passphrase"    : null,
                 "gateway"       : "gateway.push.apple.com",
                 "port"          : 2195,
@@ -103,11 +105,11 @@ module.exports = [
             }, feedbackOptions = {
                 "batchFeedback" : true,
                 "interval"      : 300,
-                "cert"          : path.join(app.absolutePath,'/certs/newfile.crt.pem'),
-                "key"           : path.join(app.absolutePath,'/certs/newfile.key.pem')
+                "cert"          : cert,
+                "key"           : key
             }, apns;
 
-                (function (callback) {
+                ((callback)=> {
 
                     apns = new apn.Connection(connectionOptions);   //Connection Setup
                     var feedbackObj = new apn.Feedback(feedbackOptions);
@@ -119,7 +121,7 @@ module.exports = [
                     });
 
                 })();
-                (function () {
+                (()=> {
                     console.log('Inside applePushNotifications: sendNotification ');
 
                     var note = new apn.Notification();  //creating a new notification object
@@ -133,9 +135,8 @@ module.exports = [
                     if (apns) {
                         apns.sendNotification(note);
                         reply(true);
-                    }else {
+                    }else
                         reply(false);
-                    }
                 })();
         }
     },

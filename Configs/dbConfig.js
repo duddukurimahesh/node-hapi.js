@@ -9,25 +9,26 @@
 module.exports = {
 
     dev: {
+        name     : "DB_Name",
         host     : "127.0.0.1",
         username : "",
         password : "",
-        port     : "27017",
-        name     : "DB_Name"
+        port     : "27017"
+        
     },
     test: {
-        host     : "127.0.0.1",
+        name     : "DB_Name",
+        host     : "",
         username : "",
         password : "",
-        port     : "27017",
-        name     : "DB_Name"
+        port     : ""
     },
     live: {
-        host     : "127.0.0.1",
+        name     : "DB_Name",
+        host     : "",
         username : "",
         password : "",
-        port     : "27017",
-        name     : "DB_Name"
+        port     : ""
     }
 
 
