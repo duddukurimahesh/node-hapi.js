@@ -83,13 +83,13 @@ module.exports = [
 
             console.log('\x1b[36m\x1b[1m','+++++++++++++++++++++++++ Test API request recieved +++++++++++++++++++++++++');
 
-            let apn     = require('apn');
-            let path    = require('path');
-            let configs = require('../Configs');
-            const env   = require('../env');
-            const app   = configs.app[env.instance];
-            let cert    = path.join(app.absolutePath,'/certs/newfile.crt.pem');
-            let key     = path.join(app.absolutePath,'/certs/newfile.key.pem');
+            let apn      = require('apn');
+            let path     = require('path');
+            let configs  = require('../Configs');
+            const env    = require('../env');
+            const app    = configs.app[env.instance];
+            let cert     = path.join(app.absolutePath,'/Certificates/cert.pem');
+            let key      = path.join(app.absolutePath,'/Certificates/key.pem');
 
             let connectionOptions = {           //node apn options
                 "cert"          : cert,
@@ -138,6 +138,33 @@ module.exports = [
                     }else
                         reply(false);
                 })();
+
+            /*var options = {
+                cert: cert,
+                key: key,
+                gateway : "gateway.push.apple.com",
+                production: true,
+                debug : true,
+                passphrase: ''
+            };
+            var apnProvider = new apn.Provider(options);
+            var note = new apn.Notification();
+
+            note.expiry = Math.floor(Date.now() / 1000) + 3600;             // expiry time for notification.
+            note.sound = "Certificates/ping.aiff";
+
+            note.alert = request.message;                                           // message to be sent.
+            note.payload = {};
+
+            apnProvider.send(note, request.deviceToken).then(function (err,result) {      // send notification.
+                if(err){
+                    //console.log(err);
+                    reply(err,null);
+                }else{
+                    console.log(' -----  sending Push Notification from APN.  ----- ');
+                    reply(result,null);
+                }
+            })*/
         }
     },
 

@@ -72,14 +72,14 @@ module.exports = {
     },
 
 	// Generate a random string.
-	randomSlug: (stringLength, callback) => {
+	randomSlug: function(stringLength, callback) {
 
 		console.log('UniversalFunctions: Inside random slug');
 
-    	let charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    	let randomString = '';
-    	for (let i = 0; i < stringLength; i++) {
-    		let randomPoz = Math.floor(Math.random() * charSet.length);
+    	var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    	var randomString = '';
+    	for (var i = 0; i < stringLength; i++) {
+    		var randomPoz = Math.floor(Math.random() * charSet.length);
     		randomString += charSet.substring(randomPoz,randomPoz+1);
     	}
     	callback(null,{data: randomString});

@@ -1,10 +1,10 @@
-/*
- * @file: server.js
- * @description: This is the main startup server file to init the application
- * @date: 27/07/16
- * @author: Nitin Padgotra
- * */
 
+/*-----------------------------------------------------------------------
+   * @ file        : index.js
+   * @ description : Main module to incluse all the Utils files.
+   * @ author      : Duddukuri Mahesh
+   * @ date        : 
+-----------------------------------------------------------------------*/
 
 'use strict';
 

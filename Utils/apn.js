@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------------------------
    * @ file        : fcm.js
    * @ description : This file represents the Apple Push Notification Service.

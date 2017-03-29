@@ -8,6 +8,8 @@
 
 'use strict';
 
+const custom_Init    = require('./custom_Init');
+
 module.exports = [
     
     /*-----------------------
@@ -68,6 +70,17 @@ module.exports = [
                 }, 'stdout']
             }
         }
+    },
+
+    /*---------------------------
+         Init the index route.
+    ----------------------------*/
+
+    {
+        // register plugins to server instance.
+        register: require('./custom_Init'),
+        options: {}
+
     },
 
 ];

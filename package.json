@@ -13,6 +13,7 @@
   "author": "Duddukiuri Mahesh",
   "license": "ISC",
   "dependencies": {
+    "apn": "1.7.8",
     "boom": "^4.2.0",
     "fcm": "^1.0.3",
     "good": "^7.1.0",
@@ -25,5 +26,16 @@
     "mongodb": "2.2.19",
     "mongoose": "4.5.7",
     "vision": "4.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-filesize": "0.0.6",
+    "gulp-removelogs": "^0.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8",
+    "nodemon": "^1.11.0"
   }
 }
