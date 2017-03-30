@@ -6,11 +6,6 @@
    * @ date        : 
 -------------------------------------------------------------------------------------------------*/
 
-function hello (name) {
-  console.log('hi', name)
-}
-
-
 'use strict';
 
 // Include internal modules.
@@ -18,28 +13,28 @@ const configs  = require('../Configs');
 const env      = require('../env');
 const app      = configs.app[env.instance]; 
 
-var custom_Init = {  
+var serverDoc = {  
   register: function (server, options, next) {
-    console.log('                    CUSTOM PLUGIN: (1) ************** LOADING Init index route. *************');
+    console.log('                    CUSTOM PLUGIN: (2) ************** LOADING Project Documentation. ********');
     // Init the index route.
     server.route({
-      method: 'GET',
-      path: '/',
-      handler: function (request, reply) {
-        return reply({
-            name     : app.name,
-            endpoint : app.host,
-            port     : app.port
-        }).code(201);
-      }
+        method: 'GET',
+        path: '/doc/{param*}',
+        handler: {
+            directory: {
+                path: 'docs',
+                listing: true
+            }
+        }
     });
     next()	// call next() to signal hapi that your plugin has done the job.
   }
 }
 
-custom_Init.register.attributes = {  
-  name: 'base-routes',
+serverDoc.register.attributes = {  
+  name: 'doc-routes',
   version: '1.0.0'
 }
 
-module.exports = custom_Init  
+module.exports = serverDoc  
+

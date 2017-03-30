@@ -18,6 +18,7 @@ const app      = configs.app[env.instance];
 const db       = configs.db [env.instance];
 const server   = new Hapi.Server();
 const routes   = require('./Routes');
+const fs          = require('fs');
 
 // Setting Server Configuration.
 server.connection({
@@ -39,8 +40,32 @@ server.register(plugIns,(err)=> {
         if (err) {
             console.log('\x1b[41m%s\x1b[0m',"+++ Error starting server +++");
             throw err;
-        } else
+        } else{
+                server.route([{
+                        method: 'GET',
+                        path: '/{param*}',
+                        handler: {
+                            directory: {
+                                path: 'docs/public',
+                                listing: true
+                            }
+                        }
+                    },{     //route for sending the privacy and terms html files.
+                    method: 'GET',
+                    path: '/files/{element}',
+                    handler: function(request,reply){
+                        var contentPath = app.absolutePath+'/docs/'+request.params.element;
+                        console.log(contentPath);
+                        if(fs.existsSync(contentPath)){
+                            reply.file(contentPath);
+                        }else{
+
+                            reply({statusCode: "404", status:"error", message:"File not found"});
+                        }
+                    }
+                }]);
             console.log('\x1b[42m%s\x1b[0m', '+++ SERVER STARTED +++\r\nServer running at:' + server.info.uri);
+        }
     });
 });
 
@@ -51,8 +76,10 @@ const Db_Options = {
     user   : db.username,
     pass   : db.password
 };
+// Build the connection string.
 const mongoUrl = 'mongodb://'+db.host+':'+db.port+'/'+db.name;
 
+// Create the database connection.
 /*mongoose.connect(mongoUrl,Db_Options,(err)=> {
     if (err) {
         console.log('\x1b[41m%s\x1b[0m',"DB Error: "+ err);
@@ -60,6 +87,28 @@ const mongoUrl = 'mongodb://'+db.host+':'+db.port+'/'+db.name;
     } else
         console.log('\x1b[42m%s\x1b[0m','MongoDB Connected :'+ mongoUrl);
 });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // need to write connection events for mongodb.
 // mocha + chai for tessting

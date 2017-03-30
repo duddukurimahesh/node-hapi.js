@@ -82,6 +82,16 @@ module.exports = [
         options: {}
 
     },
+    /*---------------------------
+         Init the doc route.
+    ----------------------------*/
+
+    {
+        // register plugins to server documentation.
+        register: require('./serverDoc'),
+        options: {}
+
+    },
 
 ];
 

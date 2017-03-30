@@ -29,13 +29,19 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-changed": "^2.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-filesize": "0.0.6",
+    "gulp-jsbeautifier": "^2.1.0",
     "gulp-removelogs": "^0.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-strip-comments": "^2.4.5",
+    "gulp-trimlines": "^1.0.1",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "gulp-whitespace": "^0.1.0",
     "nodemon": "^1.11.0"
   }
 }
